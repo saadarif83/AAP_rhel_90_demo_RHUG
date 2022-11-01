@@ -1,0 +1,13 @@
+---
+- name: Apache server uninstalled
+  hosts: web 
+  become: yes
+  tasks:
+  - name: Apache version un-installed
+    yum:
+      name: httpd
+      state: absent
+  - name: delete web.html
+    file:
+      path: /var/www/html/index.html
+      state: absent
