@@ -30,7 +30,7 @@
   amazon.aws.ec2_instance:
     name: {{ instance_name }}
     network:
-      assign_public_ip: yes
+      assign_public_ip: {{ public_ip }}
     key_name: "{{ aws_keypair_name }}"
     instance_type: "{{ aws_instance_size }}"
     image_id: "{{ aws_instance_ami.image_id }}"
@@ -43,7 +43,7 @@
     #  ansible_group: "{{ aws_ansiblegroup_tag }}"
       owner: "{{ aws_vm_owner }}"
       info: "This instance was built by Red Hat Product Demos"
-      Name: "{{ aws_vm_name }}"
+      Name: "{{ instance_name }}"
     # wait: "{{ aws_ec2_wait }}"
     vpc_subnet_id: "{{ aws_subnet_id }}"
     # user_data: "{{ lookup('template', aws_userdata_template+'.j2', template_vars=dict(aws_vm_name=vm_name)) }}"
