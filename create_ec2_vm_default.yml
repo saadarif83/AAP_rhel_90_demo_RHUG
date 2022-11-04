@@ -1,6 +1,6 @@
 ---
 - name: start an instance with a public IP address
-  #hosts: node1
+  hosts: localhost
   #become: yes
   tasks:
   - name: create instance
