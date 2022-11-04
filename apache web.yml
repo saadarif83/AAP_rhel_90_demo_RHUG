@@ -1,6 +1,6 @@
 ---
 - name: Apache server installed
-  hosts: web 
+  hosts: web aws_ec2
   become: yes
   tasks:
   - name: latest Apache version installed
