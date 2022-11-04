@@ -25,8 +25,7 @@
 
   - name: AWS| CREATE VM | save ami
     set_fact:
-      aws_instance_ami: >
-        {{ (amis.images | selectattr('name', 'defined') | sort(attribute='creation_date'))[-2] }}
+      aws_instance_ami: "{{ (amis.images | selectattr('name', 'defined') | sort(attribute='creation_date'))[-2] }}"
 
   - name: AWS| CREATE VM | create instance
     amazon.aws.ec2_instance:
