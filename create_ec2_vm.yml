@@ -28,9 +28,9 @@
 
 - name: AWS| CREATE VM | create instance
   amazon.aws.ec2_instance:
-    name: {{ instance_name }}
+    name: "{{ instance_name }}"
     network:
-      assign_public_ip: {{ public_ip }}
+      assign_public_ip: "{{ public_ip }}"
     key_name: "{{ aws_keypair_name }}"
     instance_type: "{{ aws_instance_size }}"
     image_id: "{{ aws_instance_ami.image_id }}"
