@@ -16,7 +16,7 @@
   - name: AWS| CREATE VM | find ami
     amazon.aws.ec2_ami_info:
       image_ids: ami-0d593311db5abb72b
-      #region: "{{ aws_region }}"
+      region: "{{ aws_region }}"
       #owners: "amazon" #"{{ aws_image_owners | default(omit)}}"
       #filters:
       #  name: "{{ aws_image_filter }}"
