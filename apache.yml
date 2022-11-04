@@ -18,4 +18,4 @@
       dest: /var/www/html/index.html
   - name: test
     amazon.aws.ec2_instance:
-      name: test_vm
+      name: "test_vm"
