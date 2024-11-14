@@ -1,4 +1,7 @@
 ---
-- name: Print all available facts
-  ansible.builtin.debug:
-    var: ansible_facts
+- name: Check URL
+  hosts: control
+  tasks:
+    - name: Check that you can connect (GET) to a page and it returns a status 200
+      uri:
+        url: "http://www.google.com"
