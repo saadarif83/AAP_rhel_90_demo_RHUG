@@ -1,6 +1,4 @@
 ---
-- name: Print server hostname
-  hosts: all
-  tasks:
-  - name: get server hostname
-    msg: "The server hostname is {{ ansible_hostname }}"
+- name: Print all available facts
+  ansible.builtin.debug:
+    var: ansible_facts
